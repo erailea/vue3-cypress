@@ -1,7 +1,7 @@
 <template>
   <div>
     <TextInput @newTodo="addTodo" />
-    <div v-if="todos.length">
+    <div class="todo-list" v-if="todos.length">
       <TodoListItem
         v-for="todo in todos"
         :key="todo.id"
@@ -19,14 +19,7 @@
 import TextInput from "./TextInput.vue";
 import TodoListItem from "./TodoListItem.vue";
 
-const initialTodos = [
-  { id: 1, text: "Do not sleep on a meeting" },
-  { id: 2, text: "Do not grocery shop when you're hungry" },
-  {
-    id: 3,
-    text: "Do not hit 'reply all' on a company-wide email with a snarky comment",
-  },
-];
+const initialTodos = [{ id: 1, text: "Do not sleep on a meeting" }];
 let nextTodoId = initialTodos.length + 1;
 
 export default {
